@@ -14,13 +14,13 @@
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 card-app">
                 <div class="col mb-4" th:each="juego, info : ${listajuegos}">
                     <div class="card" >
-                        <img class="card-img-top" th:src="${juego.imageURL}" alt="Card image cap">
+                        <img class="card-img-top" th:src="${juego.getImageurl()}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title" >
-                                <span th:text="${juego.nombre}"></span>
-                                <!-- ....... -->
+                                <span th:text="${juego.getNombre()}"></span>
+                                <div class="p-3 mb-2 bg-warning text-dark" th:text="${juego.getGenero()}"></div>
                             </h5>
-                            <p class="card-text" th:text="${juego.descripcion}"></p>
+                            <p class="card-text" th:text="${juego.getDescripcion()}"></p>
                         </div>
                     </div>
                 </div>
