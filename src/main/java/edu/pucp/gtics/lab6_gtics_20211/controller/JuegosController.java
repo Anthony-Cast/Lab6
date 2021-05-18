@@ -97,7 +97,10 @@ public class JuegosController {
 
     @PostMapping("/juegos/guardar")
     public String guardarJuegos(Model model, RedirectAttributes attr, @ModelAttribute("juego") @Valid Juegos juego, BindingResult bindingResult ){
+
         if(bindingResult.hasErrors()){
+            System.out.println("AQUI");
+            System.out.println(bindingResult.getFieldError());
             List<Plataformas> listaPlataformas = plataformasRepository.findAll();
             List<Distribuidoras> listaDistribuidoras = distribuidorasRepository.findAll();
             List<Generos> listaGeneros = generosRepository.findAll();
