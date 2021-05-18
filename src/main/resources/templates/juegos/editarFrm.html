@@ -12,6 +12,7 @@
         </div>
         <div class="container-fluid">
                 <form method="POST"  th:object="${juego}" th:action="@{/juegos/guardar}">
+                    <input th:field="*{idjuego}" type = "hidden">
                     <div class="form-group">
                         <label>Nombre</label>
                         <input type="text" class="form-control"  th:field="*{nombre}" >
@@ -28,8 +29,7 @@
                             <option value="-1">-Seleccione-</option>
                             <option th:each="g:${listaGeneros}"
                                     th:value="${g.idgenero}"
-                                    th:text="${g.nombre}"
-                                    th:selected="${g.idgenero}==*{genero.idgenero}"></option>
+                                    th:text="${g.nombre}"></option>
                         </select>
                         <div class="text-danger" th:if="${#fields.hasErrors('genero.idgenero')}" th:errors="*{genero.idgenero}">Error</div>
                     </div>
@@ -39,8 +39,7 @@
                           <option value="-1">- Seleccione -</option>
                           <option th:each="plataforma : ${listaPlataformas}"
                               th:value="${plataforma.idplataforma}"
-                              th:text="${plataforma.nombre}"
-                              th:selected="(${plataforma.idplataforma} == *{plataforma.idplataforma})" ></option>
+                              th:text="${plataforma.nombre}"></option>
                         </select>
                         <div class="text-danger" th:if="${#fields.hasErrors('plataforma.idplataforma')}" th:errors="*{plataforma.idplataforma}">Error</div>
                     </div>
@@ -50,8 +49,7 @@
                             <option value="-1">- Seleccione -</option>
                             <option th:each="d : ${listaDistribuidoras}"
                                     th:value="${d.iddistribuidora}"
-                                    th:text="${d.nombre}"
-                                    th:selected="(${d.iddistribuidora} == *{distribuidora.iddistribuidora})" ></option>
+                                    th:text="${d.nombre}"></option>
                         </select>
                         <div class="text-danger" th:if="${#fields.hasErrors('distribuidora.iddistribuidora')}" th:errors="*{distribuidora.iddistribuidora}">Error</div>
                     </div>
