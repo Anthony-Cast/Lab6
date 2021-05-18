@@ -20,7 +20,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title" >
                                         <span th:text="${juego.nombre}"></span>
-                                        <!-- ....... -->
+                                        <div class="p-3 mb-2 bg-warning text-dark" th:text="${juego.genero.nombre}"></div>
                                     </h5>
                                     <p class="card-text" th:text="${juego.descripcion}"></p>
                                 </div>
