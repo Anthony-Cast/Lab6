@@ -88,6 +88,7 @@ public class JuegosController {
             model.addAttribute("listaPlataformas", listaPlataformas);
             model.addAttribute("listaDistribuidoras", listaDistribuidoras);
             model.addAttribute("listaGeneros", listaGeneros);
+            System.out.println("aqi");
             return "juegos/editarFrm";
         }else {
             return "redirect:/juegos/lista";
